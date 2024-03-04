@@ -5,7 +5,7 @@ import { AuthContext } from "../AuthContext";
 
 export const AuthProvider = ({ children }) => {
 
-    const [auth,setAuth] = useState(null);
+    const [auth,setAuth] = useState({});
   
     
 
