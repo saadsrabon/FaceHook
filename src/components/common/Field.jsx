@@ -10,18 +10,16 @@ const Field = ({ label, htmlFor, children, error }) => {
           {label}
         </label>
       )}
-      <label className="auth-label" htmlFor="email">
-        Email
-      </label>
       {children}
-      {error && <div className="text-red-500">{error?.message}</div>}
+      {error && <div role="alert" className="text-red-500">{error?.message}</div>}
     </div>
   );
 };
 
 const getChildId = (children) => {
   const child = React.Children.only(children);
-  return child.props.id;
+  if("id" in child.props) return child.props.id;
+
 };
 
 export default Field;
